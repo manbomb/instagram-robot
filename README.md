@@ -7,10 +7,31 @@ Aumentar o engajamento (curtidas e seguidores) em páginas de maneira automátic
 O uso deste tipo de script de maneira constante e exagerada pode levar ao bloqueio da página ou perfil por parte do Instagram, temporário ou permanente.
 
 ## Pidao
-É um robô que dispara comentários listados no arquivo 'comment_pidao.py' de maneira aleatória em posts das tags listadas no arquivo 'tags.txt'.
+É um robô que dispara comentários listados no arquivo 'comment_pidao.py' de maneira aleatória em posts das tags listadas no arquivo 'tags.txt'. Este nome tem origem popular na palavra 'pidão', alguém que pede ou apela demais.
 
 ## Inteligente
-Diferente do Pidao, o Inteligente é um robô que analisa a foto do post e faz um comentário de acordo com o conteúdo que encontra nela, para isso utiliza detecção de objetos com a tecnologia YOLO (You Only Look Once) uma lista de comentários (em 'comment.txt') preenchidos de acordo com o contexto.
+Diferente do Pidao, o Inteligente é um robô que analisa a foto do post e faz um comentário de acordo com o conteúdo que encontra nela, para isso utiliza detecção de objetos com a tecnologia YOLO (You Only Look Once) uma lista de comentários (em 'comment.txt') preenchidos de acordo com o contexto. Este é chamado assim, pois, é inteligente ao contrário do anterior.
+
+## Como se usa ?
+Instale o Python e as suas dependencias:
+ - Selenium
+ - Numpy
+ - Urllib
+ - OpenCV
+ - PyAutoGUI
+ - Random
+ - ArgParse
+ 
+Execute o script (no windows):
+
+ - pidao
+ ```
+ python pidao.py -u user -p senha
+ ``` 
+ - inteligente
+ ```
+ python inteligente.py -u user -p senha
+ ```
 
 ## Como funciona ?
 Ambos utilizam a biblioteca Selenium do Python e o ChromeDriver para acessar e logar no Instagram, porém, devido o fato do campo de comentários do Instagram ser 'não-clicável', fez se necessário utilizar a biblioteca PyAutoGUI para digitar 'manualmente' os comentários. Para a detecção de objetos no Inteligente, o método YOLO foi utilizado, pois, apresenta um melhor desempenho que outras tecnologias (tanto em velocidade quanto precisão) como a Haar Cascade, além de o site https://www.pyimagesearch.com/ já disponibilizar um modelo treinado para 80 label's. O PHP foi utilizado devido a afinidade do desenvolvedor com a linguagem para este tipo de aplicação (sequestro de objetos através de file_get_contents) e deve ser executado em um localhost de preferência.
